@@ -6,7 +6,7 @@
   "gui": true,
 <% } -%>
 <% if (type === 'ts') { -%>
-  "main": "dist/index.js",
+  "main": "dist/src/index.js",
 <% } -%>
 <% if (type === 'js') { -%>
   "main": "src/index.js",
