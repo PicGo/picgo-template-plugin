@@ -2,9 +2,6 @@
   "name": "picgo-plugin-<%=name%>",
   "version": "1.0.0",
   "description": "<%=description%>",
-<% if (!cli) { -%>
-  "gui": true,
-<% } -%>
 <% if (type === 'ts') { -%>
   "main": "dist/index.js",
 <% } -%>
@@ -27,6 +24,9 @@
   },
   "keywords": [
     "picgo",
+<% if (!cli) { -%>
+    "picgo-gui-plugin",
+<% } -%>
     "picgo-plugin"
   ],
   "author": "<%=author%>",
