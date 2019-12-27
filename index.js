@@ -44,6 +44,11 @@ const prompts = [
         short: 'js'
       }
     ]
+  },
+  {
+    name: 'commands',
+    type: 'confirm',
+    message: 'Your plugin has some shortcut for GUI?'
   }
 ]
 

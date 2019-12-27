@@ -8,12 +8,23 @@ module.exports = (ctx) => {
     })
 <% }) -%>
   }
+<% if (commands){ -%>
+  const commands = (ctx) => [{
+    label: '',
+    key: '',
+    name: '',
+    async handle (ctx, guiApi) {}
+  }]
+<% } -%>
   return {
 <% if (modules.includes('uploader')){ -%>
     uploader: '<%=name%>',
 <% } -%>
 <% if (modules.includes('transformer')){ -%>
     transformer: '<%=name%>',
+<% } -%>
+<% if (commands){ -%>
+    commands,
 <% } -%>
     register
   }

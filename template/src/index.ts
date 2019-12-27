@@ -10,12 +10,23 @@ export = (ctx: picgo) => {
     })
 <% }) -%>
   }
+<% if (commands){ -%>
+  const commands = (ctx: picgo) => [{
+    label: '',
+    key: '',
+    name: '',
+    async handle (ctx: picgo, guiApi: any) {}
+  }]
+<% } -%>
   return {
 <% if (modules.includes('uploader')){ -%>
     uploader: '<%=name%>',
 <% } -%>
 <% if (modules.includes('transformer')){ -%>
     transformer: '<%=name%>',
+<% } -%>
+<% if (commands){ -%>
+    commands,
 <% } -%>
     register
   }
