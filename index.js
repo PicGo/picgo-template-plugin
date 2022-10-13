@@ -56,7 +56,6 @@ const filters = {
   "src/index.ts": "type === 'ts'",
   "tslint.json": "type === 'ts'",
   "tsconfig.json": "type === 'ts'",
-  ".eslintrc": "type === 'js'",
   "src/index.js": "type === 'js'"
 }
 

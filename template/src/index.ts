@@ -1,7 +1,7 @@
-import picgo from 'picgo'
+import { PicGo } from 'picgo'
 
-export = (ctx: picgo) => {
-  const register = () => {
+export = (ctx: PicGo) => {
+  const register = (): void => {
 <% modules.forEach(item => { -%>
     ctx.helper.<%=item%>.register('<%=name%>', {
       handle (ctx) {
@@ -11,11 +11,11 @@ export = (ctx: picgo) => {
 <% }) -%>
   }
 <% if (commands){ -%>
-  const commands = (ctx: picgo) => [{
+  const commands = (ctx: PicGo) => [{
     label: '',
     key: '',
     name: '',
-    async handle (ctx: picgo, guiApi: any) {}
+    async handle (ctx: PicGo, guiApi: any) {}
   }]
 <% } -%>
   return {
