@@ -54,7 +54,6 @@ const prompts = [
 
 const filters = {
   "src/index.ts": "type === 'ts'",
-  "tslint.json": "type === 'ts'",
   "tsconfig.json": "type === 'ts'",
   "src/index.js": "type === 'js'"
 }
