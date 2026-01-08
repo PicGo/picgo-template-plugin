@@ -17,6 +17,10 @@
 <% if (type === 'ts') { -%>
     "build": "tsc -p .",
     "dev": "tsc -w -p .",
+    "lint": "eslint src",
+<% } -%>
+<% if (type === 'js') { -%>
+    "lint": "eslint .",
 <% } -%>
     "patch": "npm version patch && git push origin master && git push origin --tags",
     "minor": "npm version minor && git push origin master && git push origin --tags",
@@ -24,7 +28,7 @@
   },
   "keywords": [
     "picgo",
-<% if (!cli) { -%>
+<% if (useIn === 'both') { -%>
     "picgo-gui-plugin",
 <% } -%>
     "picgo-plugin"
@@ -33,19 +37,14 @@
   "license": "MIT",
   "devDependencies": {
 <% if (type === 'ts') { -%>
-    "@types/node": "16.9.1",
-    "@typescript-eslint/eslint-plugin": "^5.40.0",
-    "@typescript-eslint/parser": "^5.40.0",
-    "eslint-config-standard-with-typescript": "^23.0.0",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-standard": "^3.1.0",
-    "picgo": "^1.5.0-alpha.13",
-    "typescript": "^4.8.4",
+    "picgo": "^1.6.6",
+    "@types/node": "22.19.3",
+    "typescript": "5.9.3",
+    "eslint-config-love": "^144.0.0",
 <% } -%>
-    "eslint": "^8.25.0",
-    "eslint-config-standard": "^17.0.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-n": "^15.3.0",
-    "eslint-plugin-promise": "^6.1.0"
+    "eslint": "^9.39.2",
+    "@eslint/js": "^9.39.2",
+    "globals": "^17.0.0",
+    "@stylistic/eslint-plugin": "^5.6.1"
   }
 }

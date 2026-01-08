@@ -1,4 +1,3 @@
-const path = require('path')
 const prompts = [
   {
     name: 'name',
@@ -15,6 +14,7 @@ const prompts = [
   {
     name: 'author',
     type: 'string',
+    message: 'Plugin author:',
     required: false
   },
   {
@@ -24,9 +24,21 @@ const prompts = [
     choices: ['uploader', 'transformer', 'beforeTransformPlugins', 'beforeUploadPlugins', 'afterUploadPlugins']
   },
   {
-    name: 'cli',
-    type: 'confirm',
-    message: 'Your plugin is just used in CLI?'
+    name: 'useIn',
+    type: 'list',
+    message: 'Your plugin used in GUI or CLI?',
+    choices: [
+      {
+        name: 'GUI & CLI',
+        value: 'both',
+        short: 'both'
+      },
+      {
+        name: 'Just CLI',
+        value: 'cli',
+        short: 'cli'
+      }
+    ]
   },
   {
     name: 'type',
@@ -54,8 +66,10 @@ const prompts = [
 
 const filters = {
   "src/index.ts": "type === 'ts'",
+  "eslint.config.ts": "type === 'ts'",
   "tsconfig.json": "type === 'ts'",
-  "src/index.js": "type === 'js'"
+  "src/index.js": "type === 'js'",
+  "eslint.config.js": "type === 'js'"
 }
 
 const complete = ({ options, ctx }) => {
@@ -67,7 +81,10 @@ npm install
 
 # or
 
-yarn`)
+yarn
+
+# or
+pnpm install`)
 }
 
 module.exports = {

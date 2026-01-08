@@ -9,11 +9,13 @@ module.exports = (ctx) => {
 <% }) -%>
   }
 <% if (commands){ -%>
-  const commands = (ctx) => [{
+  const commands = (_ctx) => [{
     label: '',
     key: '',
     name: '',
-    async handle (ctx, guiApi) {}
+    async handle (ctx, _guiApi) {
+      console.log(ctx)
+    }
   }]
 <% } -%>
   return {

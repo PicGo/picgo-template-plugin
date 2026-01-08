@@ -1,6 +1,6 @@
 ## picgo-plugin-<%=name%>
 
 <%=description%>
-<% if (cli) { -%>
+<% if (useIn === 'cli') { -%>
 > ClI only
 <% } -%>

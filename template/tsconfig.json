@@ -1,26 +1,18 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "moduleResolution": "node",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": false,
-    "target": "es2017",
+    "target": "ES2017",
     "declaration": true,
+    "strictNullChecks": true,
+    "skipLibCheck": true,
     "outDir": "dist",
-    // It's shit.
-    // "baseUrl": "src",
-    // "paths": {
-    //   "@core/*": ["core/*"],
-    //   "@lib/*": ["lib/*"],
-    //   "@plugins/*": ["plugins/*"],
-    //   "@utils/*": ["utils/*"]
-    // },
     "lib": [
-      "es2017",
-      "es2015",
-      "es6"
+      "ES2017"
     ]
   },
   "include": [

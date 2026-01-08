@@ -1,4 +1,4 @@
-import { PicGo } from 'picgo'
+import type { PicGo, ICommandItem } from 'picgo'
 
 export = (ctx: PicGo) => {
   const register = (): void => {
@@ -11,11 +11,13 @@ export = (ctx: PicGo) => {
 <% }) -%>
   }
 <% if (commands){ -%>
-  const commands = (ctx: PicGo) => [{
+  const commands = (ctx: PicGo): ICommandItem[] => [{
     label: '',
     key: '',
     name: '',
-    async handle (ctx: PicGo, guiApi: any) {}
+    async handle (ctx: PicGo, _guiApi: unknown) {
+      console.log(ctx)
+    }
   }]
 <% } -%>
   return {

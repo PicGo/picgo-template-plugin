@@ -4,10 +4,8 @@ Official plugin template for PicGo-Core.
 
 ## Usage
 
-> you need to install picgo first.
-
 ```bash
-picgo init plugin <plugin-name>
+npx picgo-init plugin <plugin-name>
 ```
 
 ## Thanks
