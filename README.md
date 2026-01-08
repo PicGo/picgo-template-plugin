@@ -2,6 +2,8 @@
 
 Official plugin template for PicGo-Core.
 
+Please refer to [PicGo Plugin Development Guide](https://picgo.github.io/PicGo-Core-Doc/dev-guide/cli.html) for more details about developing PicGo plugins.
+
 ## Usage
 
 ```bash
